@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RPG</string>
+    <string name="start_new_game">Start New Game</string>
+</resources>
