@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         startGameButton.setOnClickListener{
             //swap layouts/activities to start game
+            setContentView(R.layout.new_game_screen)
         }
     }
 }
