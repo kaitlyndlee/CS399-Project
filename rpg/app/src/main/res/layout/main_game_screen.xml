@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="133dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/healer" />
+
+    <ImageView
+        android:id="@+id/enemy1"
+        android:layout_width="120dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/goblin" />
+
+    <ImageView
+        android:id="@+id/enemy2"
+        android:layout_width="131dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginRight="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/orc" />
+
+    <TextView
+        android:id="@+id/characterHealth"
+        android:layout_width="55dp"
+        android:layout_height="18dp"
+        android:text="100"
+        app:layout_constraintBottom_toTopOf="@+id/character"
+        app:layout_constraintEnd_toEndOf="@+id/character"
+        app:layout_constraintStart_toStartOf="@+id/character" />
+
+    <TextView
+        android:id="@+id/enemy1Health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        app:layout_constraintBottom_toTopOf="@+id/enemy1"
+        app:layout_constraintEnd_toEndOf="@+id/enemy1"
+        app:layout_constraintStart_toStartOf="@+id/enemy1" />
+
+    <TextView
+        android:id="@+id/enemy2Health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        app:layout_constraintBottom_toTopOf="@+id/enemy2"
+        app:layout_constraintEnd_toEndOf="@+id/enemy2"
+        app:layout_constraintStart_toStartOf="@+id/enemy2" />
+
+    <TextView
+        android:id="@+id/charName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="character"
+        app:layout_constraintBottom_toTopOf="@+id/characterHealth"
+        app:layout_constraintEnd_toEndOf="@+id/characterHealth"
+        app:layout_constraintStart_toStartOf="@+id/characterHealth" />
+
+    <TextView
+        android:id="@+id/enemy2Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="enemy2"
+        app:layout_constraintBottom_toTopOf="@+id/enemy2"
+        app:layout_constraintEnd_toEndOf="@+id/enemy2Health"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/enemy2Health" />
+
+    <TextView
+        android:id="@+id/enemy1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="enemy1"
+        app:layout_constraintBottom_toTopOf="@+id/enemy1"
+        app:layout_constraintEnd_toEndOf="@+id/enemy1Health"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="@+id/enemy1Health" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

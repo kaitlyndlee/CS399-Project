@@ -1,8 +1,11 @@
 package com.example.rpg
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,9 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startGameButton.setOnClickListener{
-            //swap layouts/activities to start game
-            setContentView(R.layout.new_game_screen)
-        }
+    }
+
+    fun onButtonClick(v: View) {
+        val myIntent = Intent(baseContext, new_game_activity::class.java)
+        startActivity(myIntent)
     }
 }
