@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert Name and Select Archetype." />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <ImageView
+        android:id="@+id/mageImage"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        app:srcCompat="@drawable/mage" />
+
+    <Button
+        android:id="@+id/mageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mage"
+        android:onClick="selectMage"/>
+
+    <ImageView
+        android:id="@+id/healerImage"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        app:srcCompat="@drawable/healer" />
+
+    <Button
+        android:id="@+id/healerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Healer"
+        android:onClick="selectHealer"/>
+
+    <ImageView
+        android:id="@+id/tankImage"
+        android:layout_width="399dp"
+        android:layout_height="131dp"
+        app:srcCompat="@drawable/tank" />
+
+    <Button
+        android:id="@+id/tankButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tank"
+        android:onClick="selectTank"/>
+
+
+
 
 </LinearLayout>
