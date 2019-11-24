@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/character"
+        android:id="@+id/player"
         android:layout_width="133dp"
         android:layout_height="243dp"
         android:layout_marginStart="40dp"
@@ -25,7 +25,7 @@
         android:layout_marginRight="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/goblin" />
+        app:srcCompat="@drawable/enemy_tank" />
 
     <ImageView
         android:id="@+id/enemy2"
@@ -36,7 +36,7 @@
         android:layout_marginRight="164dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/orc" />
+        app:srcCompat="@drawable/enemy_mage" />
 
     <TextView
         android:id="@+id/characterHealth"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="enemy2"
+        android:text="@string/enemy2Name"
         app:layout_constraintBottom_toTopOf="@+id/enemy2"
         app:layout_constraintEnd_toEndOf="@+id/enemy2Health"
         app:layout_constraintHorizontal_bias="0.444"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="enemy1"
+        android:text="@string/enemy1Name"
         app:layout_constraintBottom_toTopOf="@+id/enemy1"
         app:layout_constraintEnd_toEndOf="@+id/enemy1Health"
         app:layout_constraintHorizontal_bias="0.642"
