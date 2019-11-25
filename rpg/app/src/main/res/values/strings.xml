@@ -2,6 +2,6 @@
     <string name="app_name">RPG</string>
     <string name="start_new_game">Start New Game</string>
     <string name="title_activity_new_game_activity">new_game_activity</string>
-    <string name="enemy1Name">enemy1</string>
-    <string name="enemy2Name">enemy2</string>
+    <string name="enemy1Name">Thwackey</string>
+    <string name="enemy2Name">Eternatus</string>
 </resources>
