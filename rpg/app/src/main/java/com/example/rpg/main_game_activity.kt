@@ -12,11 +12,18 @@ class main_game_activity : AppCompatActivity() {
     lateinit var  enemy2: Architecture
     lateinit var  playerArch: Architecture
 
+    private val imageViews by lazy {
+        arrayOf<ImageView>(
+            findViewById(R.id.enemy1),
+            findViewById(R.id.enemy2)
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_game_screen)
-        val userInput = getIntent().getStringExtra("selectedArch");
-        val playerName = getIntent().getStringExtra("playerName");
+        val userInput = getIntent().getStringExtra("selectedArch")
+        val playerName = getIntent().getStringExtra("playerName")
         createPlayer(userInput, playerName)
 
         createEnemies()
@@ -44,10 +51,51 @@ class main_game_activity : AppCompatActivity() {
     }
 
     fun createEnemies() {
-        enemy1 = Tank(getString(R.string.enemy1Name))
+        when (Random.nextInt(0, 4))
+        {
+            0 -> {
+                imageViews[0].setImageResource(R.drawable.enemy_healer)
+                enemy1 = Healer("Demon")
+            }
+            1 -> {
+                imageViews[0].setImageResource(R.drawable.enemy_tank)
+                enemy1 = Tank("Orc")
+            }
+            2 -> {
+                imageViews[0].setImageResource(R.drawable.enemy_mage)
+                enemy1 = Mage("Goblin")
+            }
+            else -> {
+                imageViews[0].setImageResource(R.drawable.enemy_mage)
+                enemy1 = Mage("Goblin")
+            }
+        }
+
+        when (Random.nextInt(0, 4))
+        {
+            0 -> {
+                imageViews[1].setImageResource(R.drawable.enemy_healer)
+                enemy2 = Healer("Demon")
+            }
+            1 -> {
+                imageViews[1].setImageResource(R.drawable.enemy_tank)
+                enemy2 = Tank("Orc")
+            }
+            2 -> {
+                imageViews[1].setImageResource(R.drawable.enemy_mage)
+                enemy2 = Mage("Goblin")
+            }
+            else -> {
+                imageViews[1].setImageResource(R.drawable.enemy_mage)
+                enemy2 = Mage("Goblin")
+            }
+        }
+
         enemy1Health.text = enemy1.health.toString()
-        enemy2 = Mage(getString(R.string.enemy2Name))
+        enemy1Name.text = enemy1.name
+
         enemy2Health.text = enemy2.health.toString()
+        enemy2Name.text = enemy2.name
     }
 
     fun createPlayer(archType: String, playerName: String) {
