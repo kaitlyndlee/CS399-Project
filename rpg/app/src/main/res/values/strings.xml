@@ -4,8 +4,8 @@
     <string name="title_activity_new_game_activity">new_game_activity</string>
     <string name="enemy1Name">Thwackey</string>
     <string name="enemy2Name">Eternatus</string>
-    <string name="player_heal_toast">You healed for %i</string>
-    <string name="enemy_heal_toast">%s healed for %i</string>
-    <string name="player_attack_toast">You attacked %s for %i</string>
-    <string name="enemy_attack_toast">%s attacked you for %i</string>
+    <string name="player_heal_toast">You healed for %d</string>
+    <string name="enemy_heal_toast">%s healed for %d</string>
+    <string name="player_attack_toast">You attacked %s for %d</string>
+    <string name="enemy_attack_toast">%s attacked you for %d</string>
 </resources>

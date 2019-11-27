@@ -2,8 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/output3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#A50D0D"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/output2"
+        app:layout_constraintTop_toBottomOf="@+id/output2" />
+
+    <TextView
+        android:id="@+id/output2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#A50D0D"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/output"
+        app:layout_constraintTop_toBottomOf="@+id/output" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        android:textColor="#A50D0D"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player"
+        app:layout_constraintTop_toBottomOf="@+id/enemy1" />
 
     <ImageView
         android:id="@+id/player"
@@ -105,12 +138,11 @@
         android:id="@+id/attackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="56dp"
         android:text="Attack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toEndOf="@+id/player"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/healButton"
+        app:layout_constraintTop_toBottomOf="@+id/output2" />
 
     <Button
         android:id="@+id/healButton"
@@ -118,9 +150,8 @@
         android:layout_height="wrap_content"
         android:text="Heal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toEndOf="@+id/player"
+        app:layout_constraintStart_toStartOf="@+id/blockButton"
         app:layout_constraintTop_toBottomOf="@+id/attackButton"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -128,6 +159,7 @@
         android:id="@+id/blockButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
         android:text="Block"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
