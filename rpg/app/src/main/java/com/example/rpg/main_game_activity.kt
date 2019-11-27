@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.main_game_screen.*
 import kotlin.random.Random
 
@@ -130,24 +131,51 @@ class main_game_activity : AppCompatActivity() {
         if(attacksFirst == 0) {
             if(userInput == "heal") {
                 playerArch.heal()
+
+                val toastMessage = getString(R.string.player_heal_toast, playerArch.healAmount)
+                Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
             }
             else if(userInput == "attack") {
                 if (enemy1.health > 0) {
                     // Enemy blocks
                     if(e1Attack == 2) {
+                        val enemyCurrentHealth = enemy1.health
+
                         playerArch.attack(enemy1, enemy1.blockAmount)
+
+                        val toastMessage = getString(R.string.player_attack_toast, enemy1.name,
+                                enemyCurrentHealth - enemy1.health)
+                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                     }
                     else {
+                        val enemyCurrentHealth = enemy1.health
+
                         playerArch.attack(enemy1, 0)
+
+                        val toastMessage = getString(R.string.player_attack_toast, enemy1.name,
+                                enemyCurrentHealth - enemy1.health)
+                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                     }
                 }
                 else if (enemy2.health > 0) {
                     // Enemy blocks
                     if(e2Attack == 2) {
+                        val enemyCurrentHealth = enemy2.health
+
                         playerArch.attack(enemy2, enemy2.blockAmount)
+
+                        val toastMessage = getString(R.string.player_attack_toast, enemy2.name,
+                                enemyCurrentHealth - enemy2.health)
+                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                     }
                     else {
+                        val enemyCurrentHealth = enemy2.health
+
                         playerArch.attack(enemy2, 0)
+
+                        val toastMessage = getString(R.string.player_attack_toast, enemy2.name,
+                                enemyCurrentHealth - enemy2.health)
+                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -157,32 +185,71 @@ class main_game_activity : AppCompatActivity() {
             // Attack
             if(e1Attack == 0) {
                 if (userInput == "block") {
+                    val playerCurrentHealth = playerArch.health
+
                     enemy1.attack(playerArch, playerArch.blockAmount)
+
+                    val toastMessage = getString(R.string.enemy_attack_toast, enemy1.name,
+                        playerCurrentHealth - playerArch.health)
+                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                 }
                 else {
+                    val playerCurrentHealth = playerArch.health
+
                     enemy1.attack(playerArch, 0)
+
+                    val toastMessage = getString(R.string.enemy_attack_toast, enemy1.name,
+                        playerCurrentHealth - playerArch.health)
+                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                 }
             }
             // Heal
             else if(e1Attack == 1) {
                 enemy1.heal()
+
+                val toastMessage = getString(R.string.enemy_heal_toast, enemy1.healAmount)
+                Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
             }
         }
         else {
             // Attack
             if(e2Attack == 0) {
                 if (userInput == "block") {
+                    val playerCurrentHealth = playerArch.health
+
                     enemy2.attack(playerArch, playerArch.blockAmount)
+
+                    val toastMessage = getString(R.string.enemy_attack_toast, enemy2.name,
+                        playerCurrentHealth - playerArch.health)
+                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                 }
                 else {
+                    val playerCurrentHealth = playerArch.health
+
                     enemy2.attack(playerArch, 0)
+
+                    val toastMessage = getString(R.string.enemy_attack_toast, enemy2.name,
+                        playerCurrentHealth - playerArch.health)
+                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                 }
             }
             // Heal
             else if(e2Attack == 1) {
                 enemy2.heal()
+
+                val toastMessage = getString(R.string.enemy_heal_toast, enemy2.healAmount)
+                Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
             }
         }
     }
 
 }
+
+/*
+button.setOnClickListener{
+    val name = inputName.text.toString()
+    val message = inputMessage.text.toString()
+    val toastMessage = getString(R.string.toast_message, name, message)
+    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+}
+*/
