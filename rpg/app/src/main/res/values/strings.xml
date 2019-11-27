@@ -7,5 +7,7 @@
     <string name="player_heal_toast">You healed for %d</string>
     <string name="enemy_heal_toast">%s healed for %d</string>
     <string name="player_attack_toast">You attacked %s for %d</string>
+    <string name="player_block_toast">You blocked damage </string>
     <string name="enemy_attack_toast">%s attacked you for %d</string>
+    <string name="enemy_block_toast">%s blocked damage </string>
 </resources>

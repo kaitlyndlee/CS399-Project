@@ -135,6 +135,7 @@ class main_game_activity : AppCompatActivity() {
         )
 
         while(count < 3) {
+            Log.d("TAG", "${attacksFirst}")
             // Player goes first
             if (attacksFirst == 0) {
                 if (userInput == "heal") {
@@ -142,7 +143,9 @@ class main_game_activity : AppCompatActivity() {
 
                     ouputArray[count].text = getString(R.string.player_heal_toast, playerArch.healAmount)
 //                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
-                } else if (userInput == "attack") {
+                    Log.d("TAG", "PLAYER HEAL")
+                }
+                else if (userInput == "attack") {
                     if (enemy1.health > 0) {
                         // Enemy blocks
                         if (e1Attack == 2) {
@@ -152,6 +155,7 @@ class main_game_activity : AppCompatActivity() {
 
                             ouputArray[count].text = getString(R.string.player_attack_toast, enemy1.name,
                                     enemyCurrentHealth - enemy1.health)
+                            Log.d("TAG", "PLAYER ATTACKS ENEMY 1 BLOCKS")
 //                            Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
                         } else {
                             val enemyCurrentHealth = enemy1.health
@@ -161,6 +165,7 @@ class main_game_activity : AppCompatActivity() {
                             ouputArray[count].text = getString(R.string.player_attack_toast, enemy1.name,
                                     enemyCurrentHealth - enemy1.health)
 //                            Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                            Log.d("TAG", "PLAYER ATTACKS")
                         }
                     } else if (enemy2.health > 0) {
                         // Enemy blocks
@@ -172,6 +177,7 @@ class main_game_activity : AppCompatActivity() {
                             ouputArray[count].text = getString(R.string.player_attack_toast, enemy2.name,
                                     enemyCurrentHealth - enemy2.health)
 //                            Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                            Log.d("TAG", "PLAYER ATTACKS ENEMY 2 BLOCKS")
                         } else {
                             val enemyCurrentHealth = enemy2.health
 
@@ -180,8 +186,13 @@ class main_game_activity : AppCompatActivity() {
                             ouputArray[count].text = getString(R.string.player_attack_toast, enemy2.name,
                                     enemyCurrentHealth - enemy2.health)
 //                            Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                            Log.d("TAG", "PLAYER ATTACKS ENEMY 2")
                         }
                     }
+                }
+                else if (userInput == "block") {
+                    ouputArray[count].text = getString(R.string.player_block_toast)
+                    Log.d("TAG", "PLAYER BLOCKS")
                 }
             }
             // Enemy1 goes first
@@ -196,7 +207,9 @@ class main_game_activity : AppCompatActivity() {
                         ouputArray[count].text = getString(R.string.enemy_attack_toast, enemy1.name,
                             playerCurrentHealth - playerArch.health)
 //                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
-                    } else {
+                        Log.d("TAG", "ENEMY1 ATTACKS, PLAYER BLOCKS")
+                    }
+                    else {
                         val playerCurrentHealth = playerArch.health
 
                         enemy1.attack(playerArch, 0)
@@ -204,6 +217,7 @@ class main_game_activity : AppCompatActivity() {
                         ouputArray[count].text = getString(R.string.enemy_attack_toast, enemy1.name,
                             playerCurrentHealth - playerArch.health)
 //                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                        Log.d("TAG", "ENEMY1 ATTACKS")
                     }
                 }
                 // Heal
@@ -212,8 +226,14 @@ class main_game_activity : AppCompatActivity() {
 
                     ouputArray[count].text = getString(R.string.enemy_heal_toast, enemy2.name, enemy1.healAmount)
 //                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                    Log.d("TAG", "ENEMY1 HEALS")
                 }
-            } else {
+                else if (e1Attack == 2) {
+                    ouputArray[count].text = getString(R.string.enemy_block_toast, enemy1.name)
+                    Log.d("TAG", "ENEMY1 ATTACKS, PLAYER BLOCKS")
+                }
+            }
+            else if (attacksFirst == 2) {
                 // Attack
                 if (e2Attack == 0) {
                     if (userInput == "block") {
@@ -224,6 +244,7 @@ class main_game_activity : AppCompatActivity() {
                         ouputArray[count].text = getString(R.string.enemy_attack_toast, enemy2.name,
                             playerCurrentHealth - playerArch.health)
 //                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                        Log.d("TAG", "ENEMY2 ATTACKS, PLAYER BLOCKS")
                     } else {
                         val playerCurrentHealth = playerArch.health
 
@@ -232,6 +253,7 @@ class main_game_activity : AppCompatActivity() {
                         ouputArray[count].text = getString(R.string.enemy_attack_toast, enemy2.name,
                             playerCurrentHealth - playerArch.health)
 //                        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                        Log.d("TAG", "ENEMY2 ATTACKS")
                     }
                 }
                 // Heal
@@ -240,17 +262,18 @@ class main_game_activity : AppCompatActivity() {
 
                     ouputArray[count].text = getString(R.string.enemy_heal_toast, enemy2.name, enemy2.healAmount)
 //                    Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
+                    Log.d("TAG", "ENEMY2 HEALS")
+                }
+                else if (e1Attack == 2) {
+                    ouputArray[count].text = getString(R.string.enemy_block_toast, enemy2.name)
+                    Log.d("TAG", "ENEMY2 ATTACKS, PLAYER BLOCKS")
                 }
             }
             count++
-            Log.d("TAG", "${attacksFirst}")
-            attacksFirst = (attacksFirst + 1) % 3
-//            var sleepCount = 0
-//            while(sleepCount < 2000000000) {
-//                sleepCount++
-//            }
 
+            attacksFirst = (attacksFirst + 1) % 3
         }
+        Log.d("TAG", "----------------------")
     }
 
 }
