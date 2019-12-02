@@ -10,4 +10,5 @@
     <string name="player_block_toast">You blocked damage </string>
     <string name="enemy_attack_toast">%s attacked you for %d</string>
     <string name="enemy_block_toast">%s blocked damage </string>
+    <string name="enemy_dead_toast">%s is dead </string>
 </resources>

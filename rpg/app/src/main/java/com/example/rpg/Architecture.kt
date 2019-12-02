@@ -11,13 +11,15 @@ open class Architecture (newName: String) {
                 field = value
             }
         }
+
+    open var maxHealth = 50
     open var name = newName
         get() = field
         set(value) { field = value }
     open var team: String? = null
         get() = field
         set(value) { field = value }
-    open var attackDamage: Int = 5
+    open var attackDamage: Int = 4
         get() = field
         set(value) { field = value }
     open var  healAmount: Int = 0
@@ -35,6 +37,9 @@ open class Architecture (newName: String) {
     }
 
     fun heal() {
+        if(this.health >= this.maxHealth) {
+            return
+        }
         this.health += this.healAmount
     }
 
